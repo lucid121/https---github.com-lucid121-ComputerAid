@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        /* Basic styling for the navigation bar */
+        nav {
+            margin-bottom: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Full-width video slides */
+        .mySlides video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* Text overlay */
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Large heading styling */
+        .large-heading {
+            font-size: 64px; /* Change this to adjust the heading size */
+            margin-bottom: 20px; /* Adjust spacing below the heading */
+        }
+
+        /* Paragraph styling */
+        .paragraph {
+            font-size: 20px; /* Change this to adjust the paragraph size */
+            line-height: 1.5; /* Adjust the line height for paragraph readability */
+            margin-top: 20px; /* Additional space above the paragraph */
+        }
+
+        /* Hide the controls */
+        .mySlides video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .mySlides video::-moz-media-controls {
+            display: none !important;
+        }
+
+        /* Make sure videos don't show controls */
+        .mySlides video {
+            pointer-events: none;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+        }
+
+        .logo img {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products_services.html">Products and Services</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- Logo in the top right corner -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <div class="slideshow-container">
+        <!-- Slides with videos -->
+        <div class="mySlides">
+            <video autoplay muted loop>
+                <source src="videos/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="mySlides">
+            <video autoplay muted loop>
+                <source src="videos/video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="mySlides">
+            <video autoplay muted loop>
+                <source src="videos/video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Text overlay with heading and paragraph -->
+        <div class="text-overlay">
+            <h1 class="large-heading">Computer Aid</h1> <!-- Large Heading -->
+            <p class="paragraph">We inch closer to our goal of bridging the digital divide with each project.
+
+Together with the businesses who fund our projects and donate equipment, we provide technology to deprived individuals and communities worldwide. </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 5000); // Change video every 5 seconds
+        }
+    </script>
+</body>
+</html>
+
